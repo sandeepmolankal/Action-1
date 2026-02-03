@@ -6,6 +6,9 @@ Jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
+        - name: Adding checkpout
+          uses: actions/checkout@v6
+          
         - name: Welcome to GHU
           run: echo "welcome to Workflow"
         
