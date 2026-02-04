@@ -13,7 +13,7 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: Generat ASCII Artwork
-          run: Cowsay -f dog "Run for cover, I am a dog....RAWR">> dog.txt
+          run: cowsay -f dog "Run for cover, I am a dog....RAWR">> dog.txt
 
         - name: Test File Exist
           run: grep -i "dog" dog.txt
