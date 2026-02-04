@@ -1,0 +1,19 @@
+name: Second work flow
+
+on: push
+
+jobs:
+    second_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Adding Checkout
+          uses: actions/checkout@v6
+
+        - name: Multi line steps
+          run: |
+            echo "welcome to Workflow"
+            ls -ltra
+            cat README.md
+         
+        - name: Generat ASCII Artwork
+          run: Cowsay -f dog "Run for cover, I am a dog....RAWR">> dog.txt
