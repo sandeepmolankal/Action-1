@@ -1,0 +1,26 @@
+name: Generating ASCII
+
+on: push
+
+jobs: 
+    ascii_jobs:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Adding Checkout to repo
+          uses: actions/checkout@v6
+          
+        - name: installing cowsay program
+          run: sudo apt-get install cowsay -y
+
+        - name: Generat ASCII Artwork
+          run: Cowsay -f dog "Run for cover, I am a dog....RAWR">> dog.txt
+
+        - name: Test File Exist
+          run: grep -i "dog" dog.txt
+
+        - name: read the file
+          run: cat dog.txt
+
+        - name: list Repo file
+          run: ls -ltra
+
