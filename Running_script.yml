@@ -14,4 +14,4 @@ jobs:
           run: ls -ltra
 
         - name: Running_Shell_script
-          run: ./ascii_shell.
+          run: ./ascii_shell.sh
