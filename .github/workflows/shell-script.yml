@@ -12,5 +12,5 @@ jobs:
         run: ls -ltra
       - name: add shellscrept
         run: |
-          chmod +x ascii-shell.sh
-          ./ascii-shell.sh
+          chmod +x .github/workflows/ascii-shell.sh
+          ./.github/workflows/ascii-shell.sh
