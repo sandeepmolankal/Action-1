@@ -11,4 +11,6 @@ jobs:
       - name: show all files
         run: ls -ltra
       - name: add shellscrept
-        run: ./ascii_shell.sh
+        run: |
+          chmod +x ascii_shell.sh
+          ./ascii_shell.sh
