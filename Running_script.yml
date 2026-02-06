@@ -3,7 +3,7 @@ name: Running_script
 on: push
 
 jobs: 
-   acsii_script_job:
+   acsii_script_jobs:
       runs-on: ubuntu-latest
       steps:
       - name: adding checkout to repo
