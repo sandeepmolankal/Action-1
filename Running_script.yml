@@ -1,0 +1,17 @@
+name: Running_script
+
+on: push
+
+jobs: 
+    acsii_script_job:
+        runs-on: ubuntu-latest
+        
+        steps:
+        - name: Adding checkout to repo
+          uses: actions/checkout@v6
+
+        - name: list Repo files
+          run: ls -ltra
+
+        - name: Running_Shell_script
+          run: ./ascii_shell.
