@@ -1,0 +1,29 @@
+name: ascci using need action
+
+on: 
+    push
+
+jobs:
+    build_jobs:
+        runs-on: ubuntu-latest
+        steps:
+        - name: install cowsay program
+          run: sudo apt-get install cowsay -y
+
+        - name: Excute the cowsay CMD
+          run: cowsay -f sheep "Run for cover, I am a sheep....RAWR">> sheep.txt
+
+    Job_2:
+        needs: build_jobs
+        runs-on: ubuntu-latest
+        steps:
+        - name: test the file
+          run: grep -i "sheep" sheep.txt
+
+    job_3:
+        needs: Job_2
+        runs-on: ubuntu-latest
+        steps:
+        - name: deploy the file
+          run: cat sheep.txt
+

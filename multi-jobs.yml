@@ -1,0 +1,28 @@
+name: Multi jobs
+on: 
+  push 
+jobs:
+  build_jobs:
+    runs on: ubuntu-latest
+    steps:
+    - name: Installing cowsay 
+      run: sudo apt-get install cowsay -y
+    - name: cowsay command
+      run: cowsay -f sheep "Run for cover, I am a sheep....RAWR">> sheep.txt
+    - name: sleep for 30 sec
+      run: sleep 30
+  job_2:
+    runs on: ubuntu-latest
+    steps:
+    - name: sleep for 10 sec
+      run: sleep 10
+    - name: test file checking
+      run: grip -i "sheep" sheep.txt
+  Job_3:
+    runs on: ubuntu-latest
+    steps:
+    - name: read file
+      run: cat sheep.txt
+    - name: deploying........
+      run: echo deploying............................... 
+    
