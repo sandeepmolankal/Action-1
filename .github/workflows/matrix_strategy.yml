@@ -9,11 +9,11 @@ jobs:
         matrix:
           os: [ubuntu-latest, windows-latest, macos-latest]
           Image: [hello-world, alpine]
-        runs-on: ${{ matrix.os }}
+      runs-on: ${{ matrix.os }}
 
-        steps:
-        - name: Echo Docker Details
-          run: docker info
+      steps:
+      - name: Echo Docker Details
+        run: docker info
 
-        - name: Run Image ${{ matrix.os }}
-          run: docker run ${{ matrix.Image }}
+      - name: Run Image ${{ matrix.os }}
+        run: docker run ${{ matrix.Image }}
