@@ -1,0 +1,19 @@
+name: Matrix strategy congiration
+on:
+    push:
+    workflow_dispatch:
+
+jobs:
+    deploye:
+      strategy:
+      Matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        Image: [hello-world, alpine]
+      runs-on: ${{ Matrix.os }}
+
+      steps:
+      - name: Echo Docker Details
+        run: docker info
+
+      - name: Run Image ${{ Matrix.os }}
+        run: docker run ${{ Matrix.Image }}
